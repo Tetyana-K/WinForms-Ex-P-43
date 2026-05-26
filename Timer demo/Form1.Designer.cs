@@ -39,16 +39,21 @@
             timer3 = new System.Windows.Forms.Timer(components);
             timer4 = new System.Windows.Forms.Timer(components);
             timerMoving = new System.Windows.Forms.Timer(components);
+            timerNew = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(289, 24);
+            pictureBox1.BackColor = Color.PaleTurquoise;
+            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox1.Location = new Point(297, 24);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(248, 166);
+            pictureBox1.Size = new Size(241, 166);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // btnStart
             // 
@@ -99,11 +104,17 @@
             timerMoving.Interval = 500;
             timerMoving.Tick += timerMoving_Tick;
             // 
+            // timerNew
+            // 
+            timerNew.Enabled = true;
+            timerNew.Interval = 500;
+            timerNew.Tick += timerNew_Tick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(600, 450);
+            ClientSize = new Size(637, 502);
             Controls.Add(btnStartMoving);
             Controls.Add(btnClose);
             Controls.Add(btnStop);
@@ -128,5 +139,6 @@
         private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.Timer timer4;
         private System.Windows.Forms.Timer timerMoving;
+        private System.Windows.Forms.Timer timerNew;
     }
 }

@@ -38,8 +38,13 @@
             checkFrench = new CheckBox();
             checkEnglish = new CheckBox();
             lblLanguages = new Label();
+            rbKyiv = new RadioButton();
+            radioButton2 = new RadioButton();
+            radioButton3 = new RadioButton();
+            groupBoxCities = new GroupBox();
             grpColors.SuspendLayout();
             grpLanguage.SuspendLayout();
+            groupBoxCities.SuspendLayout();
             SuspendLayout();
             // 
             // grpColors
@@ -79,18 +84,17 @@
             // rbRed
             // 
             rbRed.AutoSize = true;
-            rbRed.Checked = true;
             rbRed.Location = new Point(60, 46);
             rbRed.Name = "rbRed";
             rbRed.Size = new Size(45, 19);
             rbRed.TabIndex = 0;
-            rbRed.TabStop = true;
             rbRed.Text = "Red";
             rbRed.UseVisualStyleBackColor = true;
             rbRed.CheckedChanged += rbRed_CheckedChanged;
             // 
             // lblColor
             // 
+            lblColor.BackColor = SystemColors.ActiveCaption;
             lblColor.Location = new Point(126, 321);
             lblColor.Name = "lblColor";
             lblColor.Size = new Size(209, 28);
@@ -105,7 +109,7 @@
             grpLanguage.Controls.Add(checkEnglish);
             grpLanguage.Location = new Point(456, 86);
             grpLanguage.Name = "grpLanguage";
-            grpLanguage.Size = new Size(209, 201);
+            grpLanguage.Size = new Size(203, 201);
             grpLanguage.TabIndex = 2;
             grpLanguage.TabStop = false;
             grpLanguage.Text = "Languages";
@@ -147,16 +151,63 @@
             // 
             lblLanguages.Location = new Point(456, 321);
             lblLanguages.Name = "lblLanguages";
-            lblLanguages.Size = new Size(216, 83);
+            lblLanguages.Size = new Size(203, 83);
             lblLanguages.TabIndex = 3;
             lblLanguages.Text = "Languages:";
             lblLanguages.UseCompatibleTextRendering = true;
+            // 
+            // rbKyiv
+            // 
+            rbKyiv.AutoSize = true;
+            rbKyiv.Location = new Point(38, 42);
+            rbKyiv.Name = "rbKyiv";
+            rbKyiv.Size = new Size(46, 19);
+            rbKyiv.TabIndex = 4;
+            rbKyiv.Text = "Kyiv";
+            rbKyiv.UseVisualStyleBackColor = true;
+            rbKyiv.CheckedChanged += rbKyiv_CheckedChanged;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Checked = true;
+            radioButton2.Location = new Point(38, 97);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(94, 19);
+            radioButton2.TabIndex = 5;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "radioButton2";
+            radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            radioButton3.AutoSize = true;
+            radioButton3.Location = new Point(38, 154);
+            radioButton3.Name = "radioButton3";
+            radioButton3.Size = new Size(94, 19);
+            radioButton3.TabIndex = 6;
+            radioButton3.TabStop = true;
+            radioButton3.Text = "radioButton3";
+            radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxCities
+            // 
+            groupBoxCities.Controls.Add(rbKyiv);
+            groupBoxCities.Controls.Add(radioButton3);
+            groupBoxCities.Controls.Add(radioButton2);
+            groupBoxCities.Location = new Point(830, 86);
+            groupBoxCities.Name = "groupBoxCities";
+            groupBoxCities.Size = new Size(183, 201);
+            groupBoxCities.TabIndex = 7;
+            groupBoxCities.TabStop = false;
+            groupBoxCities.Text = "Cities";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1203, 450);
+            Controls.Add(groupBoxCities);
             Controls.Add(lblLanguages);
             Controls.Add(grpLanguage);
             Controls.Add(lblColor);
@@ -167,6 +218,8 @@
             grpColors.PerformLayout();
             grpLanguage.ResumeLayout(false);
             grpLanguage.PerformLayout();
+            groupBoxCities.ResumeLayout(false);
+            groupBoxCities.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -182,5 +235,9 @@
         private CheckBox checkPolish;
         private CheckBox checkFrench;
         private CheckBox checkEnglish;
+        private RadioButton rbKyiv;
+        private RadioButton radioButton2;
+        private RadioButton radioButton3;
+        private GroupBox groupBoxCities;
     }
 }

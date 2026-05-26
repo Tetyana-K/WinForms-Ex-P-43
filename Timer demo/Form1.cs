@@ -21,11 +21,12 @@ namespace Timer_demo
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            timer1.Start();
+            timer1.Start(); // запускаємо таймер, який буде викликати подію timer1_Tick кожні 1000 мілісекунд (1 секунду)
 
         }
 
-        int index = 0;
+        // індекс поточного зображення
+        int index = 0; // індекс для відображення зображень по черзі, який буде збільшуватися на 1 при кожному виклику timer1_Tick і повертатися до 0 після досягнення кількості зображень
         private void timer1_Tick(object sender, EventArgs e)
         {
             string? picturePath = CitiesPictures.GetPIctureByIndex(index);
@@ -34,6 +35,7 @@ namespace Timer_demo
                 pictureBox1.Image = Image.FromFile(Path.Combine("../../../Images/", picturePath));
             }
             index = (index + 1) % CitiesPictures.Count;
+        // 0 1 2 - так будуть бігти індекси картинок
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -42,10 +44,10 @@ namespace Timer_demo
             this.Close();
         }
 
-        int moveStep = 50;
+        int moveStep = 10;
         private void timerMoving_Tick(object sender, EventArgs e)
         {
-            pictureBox1.Top += moveStep;
+            pictureBox1.Top += moveStep;// Top = координата верхньої межі pictureBox1 відносно верхньої межі форми, тому збільшуючи її на moveStep, ми рухаємо pictureBox1 вниз на moveStep пікселів при кожному виклику timerMoving_Tick
             if (pictureBox1.Top + pictureBox1.Height > ClientSize.Height || pictureBox1.Top < 0)
             {
                 moveStep = -moveStep;
@@ -59,7 +61,17 @@ namespace Timer_demo
 
         private void btnStop_Click(object sender, EventArgs e)
         {
-            timer1.Stop();
+            timer1.Stop(); // зупиняємо таймер1, щоб припинити виклик події timer1_Tick
+        }
+
+        private void timerNew_Tick(object sender, EventArgs e)
+        {
+            this.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
