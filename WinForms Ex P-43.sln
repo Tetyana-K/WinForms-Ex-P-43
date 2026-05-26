@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.37111.16 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForms Ex P-43", "WinForms Ex P-43\WinForms Ex P-43.csproj", "{C4C9D23E-4DCB-4917-A264-437DC7A73BD6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timer demo", "Timer demo\Timer demo.csproj", "{7EEB8C2F-F701-4305-843D-4EA166246E49}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C4C9D23E-4DCB-4917-A264-437DC7A73BD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4C9D23E-4DCB-4917-A264-437DC7A73BD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4C9D23E-4DCB-4917-A264-437DC7A73BD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EEB8C2F-F701-4305-843D-4EA166246E49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EEB8C2F-F701-4305-843D-4EA166246E49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EEB8C2F-F701-4305-843D-4EA166246E49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EEB8C2F-F701-4305-843D-4EA166246E49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
