@@ -5,17 +5,25 @@ namespace WinForms_Ex_P_43
         public Form1()
         {
             InitializeComponent();
+            this.Text = $"Selected Theme: {Properties.Settings.Default.Theme}";
+
         }
 
         // ун≥версальний обробник дл€ вс≥х рад≥окнопок
         private void rbRed_CheckedChanged(object sender, EventArgs e) //sender - це та рад≥окнопка, €ка викликала под≥ю
         {
-            var radio = (RadioButton) sender; // приводимо sender до типу RadioButton, щоб отримати доступ до його властивостей
+            var radio = (RadioButton)sender; // приводимо sender до типу RadioButton, щоб отримати доступ до його властивостей
             if (radio.Checked) // перев≥р€Їмо, чи ц€ рад≥окнопка була вибрана
             {
                 //grpColors.BackColor = Color.Red;
                 // Color.FromName(р€док) - перетворюЇ р€док з назвою кольору в об'Їкт Color, €кий можна використовувати дл€ встановленн€ кольору фону 
                 lblColor.BackColor = Color.FromName(radio.Text); // використовуЇмо текст рад≥окнопки €к назву кольору дл€ встановленн€ фону lblColor
+
+             
+                Properties.Settings.Default.Theme = radio.Text;
+                this.Text = $"Selected Theme: {Properties.Settings.Default.Theme}";
+                Properties.Settings.Default.Save();
+            
             }
         }
 
@@ -40,6 +48,14 @@ namespace WinForms_Ex_P_43
         private void rbKyiv_CheckedChanged(object sender, EventArgs e)
         {
             MessageBox.Show($"Kyiv Checked : {rbKyiv.Checked}");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //this.ForeColor = Color.LightBlue;
+            ////this.BackColor = Color.SteelBlue;
+            //this.BackColor = Color.CadetBlue;
+            //this.BackColor = Color.CornflowerBlue;
         }
     }
 }

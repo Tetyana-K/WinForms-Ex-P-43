@@ -214,6 +214,7 @@
             Controls.Add(grpColors);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             grpColors.ResumeLayout(false);
             grpColors.PerformLayout();
             grpLanguage.ResumeLayout(false);
